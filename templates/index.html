@@ -139,7 +139,18 @@
                         }
                     })
                 })
-                console.log(faces);
+                $.ajax({
+                    url:'/process',
+                    type:'POST',
+                    data:JSON.stringify(faces),
+                    contentType: 'application/json',
+                    success:function(response){
+                        console.log(response);
+                    },
+                    error:function(err){
+                        console.log(err);
+                    }
+                })
             })
 
         })
